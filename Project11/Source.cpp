@@ -1,18 +1,18 @@
 #include <iostream>
 using namespace std;
 
-template <typename T1>
-void print_arr(T1* arr, int size)
+
+void print_arr(int* arr, int size)
 {
     for (int i = 0; i < size; i++)
     {
-        *(arr_ptr + i) = rand() % 10;
+        *(arr + i) = rand() % 10;
         cout << "arr[" << i << "] = " << *(arr + i) << endl; 
     }
 }
 
-template <typename T1>
-T1 sum_arr(T1* arr, int size)
+
+int sum_arr(int* arr, int size)
 {
     int sum = 0;
 
@@ -25,6 +25,7 @@ T1 sum_arr(T1* arr, int size)
 }
 void main()
 {
+    srand(time(0));
     const int size = 10;
     int arr[size];
     int* arr_ptr = arr;
@@ -32,5 +33,6 @@ void main()
     print_arr(arr_ptr, size);
 
     cout << "Sum = " << sum_arr(arr_ptr, size) << "\n";
+
 
 }
